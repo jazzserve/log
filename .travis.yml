@@ -2,4 +2,4 @@
   go:
     - "1.10"
   install:
-    - service rsyslog start
+    - sudo service rsyslog start
