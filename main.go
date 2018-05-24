@@ -28,7 +28,7 @@ func Connect(tag string, useSyslog bool) (err error) {
 			return
 		}
 
-		Debug, err = newLogger(tag, syslog.LOG_DEBUG, log.Llongfile)
+		Debug, err = newLogger(tag, syslog.LOG_DEBUG, 0)
 		if err != nil {
 			return
 		}
@@ -44,7 +44,7 @@ func Connect(tag string, useSyslog bool) (err error) {
 		}
 	} else {
 		Info = log.New(os.Stdout, "", 0)
-		Debug = log.New(os.Stdout, "DEBUG: ", log.Llongfile)
+		Debug = log.New(os.Stdout, "DEBUG: ", 0)
 		Warning = log.New(os.Stdout, "WARNING: ", 0)
 		Error = log.New(os.Stdout, "ERROR: ", 0)
 	}
